@@ -7,6 +7,8 @@ import { ListarComponent } from './Persona/listar/listar.component';
 import { EditComponent } from './Persona/edit/edit.component';
 import { AddComponent } from './Persona/add/add.component';
 import { HttpClientModule } from '@angular/common/http';
+import{FormsModule}from '@angular/forms'
+import { ServiceService } from '../app/Service/service.service';
 
 @NgModule({
   declarations: [
@@ -17,9 +19,11 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

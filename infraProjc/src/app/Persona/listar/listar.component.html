@@ -16,10 +16,10 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr class="text-center">
-                        <td></td>
-                        <td></td>
-                        <td></td>
+                    <tr *ngFor="let persona of personas" class="text-center">
+                        <td>{{persona.id}}</td>
+                        <td>{{persona.name}}</td>
+                        <td>{{persona.apellidos}}</td>
                         <td>
                             <button class="btn btn-warning">Editar</button>
                             <button class="btn btn-danger">Delete</button>
