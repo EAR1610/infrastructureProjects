@@ -3,9 +3,7 @@
     <p>listar works!</p>
     <div class="card">
         <div class="card-header">
-            <h3>personas</h3>
-
-            <a href="personas/add" class="btn btn-primary ">Nuevo</a>            
+            <h3>usuarios</h3>
         </div>
         <div class="card-body">
             <table class="table">
@@ -18,13 +16,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let persona of personas" class="text-center">
-                        <td>{{persona.id}}</td>
-                        <td>{{persona.nombre}}</td>
-                        <td>{{persona.apellido}}</td>
+                    <tr *ngFor="let usuario of usuarios" class="text-center">
+                        <td>{{usuario.id}}</td>
+                        <td>{{usuario.nombre}}</td>
+                        <td>{{usuario.correo}}</td>
                         <td>
-                            <a class="btn btn-info" href="personas/ver/{{persona.id}}">ver</a>
-                            <a class="btn btn-warning" href="personas/edit/{{persona.id}}">Editar</a>
+                            <a class="btn btn-info" href="usuarios/read/{{usuario.id}}">ver</a>
+                            <button class="btn btn-warning">Editar</button>
+
                             <button class="btn btn-danger">Delete</button>
                         </td>
                     </tr>

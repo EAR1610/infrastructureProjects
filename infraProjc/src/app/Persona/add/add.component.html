@@ -13,42 +13,35 @@
 
         <div class="form-group row">
             <div class="col-md-6 ">
-              <label for="title">Name:</label>
+              <label for="title">Nombre:</label>
               <input
-                formControlName="name"
-                id="name"
+                formControlName="nombre"
+                id="nombre"
                 type="text"
                 class="form-control">
-                <div *ngIf="f.name.touched && f.name.invalid" class="alert alert-danger">
-                  <div *ngIf="f.name.errors.required">*Name is required.</div>
-                  <div *ngIf="f.name.errors.pattern">*The name must only contain letters.</div>
+                
+                <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
+                  <div *ngIf="f.nombre?.errors?.required">*nombre es necesario.</div>
+                  <div *ngIf="f.nombre?.errors?.pattern">*el nombre solo pude contener letras.</div>
               </div>
             </div>
         </div>
-
         <div class="form-group row">
-            <div class="col-md-6 ">
-              <label for="email">Email:</label>
-              <input
-                formControlName="email"
-                id="email"
-                type="text"
-                class="form-control">
-            
+          <div class="col-md-6 ">
+            <label for="title">Apellido:</label>
+            <input
+              formControlName="apellido"
+              id="apellido"
+              type="text"
+              class="form-control">
+              
+              <div *ngIf="f.apellido.touched && f.apellido.invalid" class="alert alert-danger">
+                <div *ngIf="f.apellido?.errors?.required">*apellido es necesario.</div>
+                <div *ngIf="f.apellido?.errors?.pattern">*el apellido solo pude contener letras.</div>
             </div>
-        </div>
-
-        <div class="form-group row">
-            <div class="col-md-6 ">
-              <label for="phone">Phone:</label>
-              <input
-                formControlName="phone"
-                id="phone"
-                type="text"
-                class="form-control">
-            
-            </div>
-        </div>
+          </div>
+      </div>
+       
 
         <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
     </form>

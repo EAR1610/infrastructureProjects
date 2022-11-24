@@ -22,15 +22,20 @@ export class AddComponent implements OnInit {
   ngOnInit(): void {
 ​
     this.form = new FormGroup({
-      name:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
-      email: new FormControl('', [ Validators.required, Validators.email ]),
-      phone: new FormControl('', [ Validators.required, Validators.pattern("^[0-9]*$") ])
+      nombre:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+      apellido:  new FormControl('', [ Validators.required, Validators.pattern('^[a-zA-ZÁáÀàÉéÈèÍíÌìÓóÒòÚúÙùÑñüÜ \-\']+') ]),
+    
     });
 ​
   }
 ​
   get f(){
+   // console.log(this.form.get('nombre')?.errors);
+   // console.log(this.form.controls);
     return this.form.controls;
+    
+    
+
   }
 ​
   submit(){

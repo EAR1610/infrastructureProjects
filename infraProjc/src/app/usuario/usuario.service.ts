@@ -4,18 +4,19 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {  Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
-import { Persona } from '../Modelo/persona';
+import { Usuario } from './usuario';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PersonaService {
-// private apiURL = "http://infraestruct.b:8080/usuario/";
+export class UsuarioService {
+
+//  private apiURL = "http://infraestruct.b:8080/usuario/";
 
   private apiURL = "http://bkinfraproj2.test/api/personas/";
-  //URL sin diagonal
-private apiURLsd=this.apiURL.substr(0, this.apiURL.length - 1);
-  
+
+
+  private apiURLsd=this.apiURL.substr(0, this.apiURL.length - 1);
 
   httpOptions = {
      headers: new HttpHeaders({
@@ -25,37 +26,36 @@ private apiURLsd=this.apiURL.substr(0, this.apiURL.length - 1);
 
   constructor(private httpClient: HttpClient) { }
 
-  getAll(): Observable<Persona[]> {
-    
-   return this.httpClient.get<Persona[]>(this.apiURLsd)//elimina ultimo caracter
+  getAll(): Observable<Usuario[]> {
+   return this.httpClient.get<Usuario[]>(this.apiURLsd)
    .pipe(
      catchError(this.errorHandler)
    )
  }
 
- create(persona: any): Observable<Persona> {
-   return this.httpClient.post<Persona>(this.apiURL, JSON.stringify(persona), this.httpOptions)
+ create(usuario: Usuario): Observable<Usuario> {
+   return this.httpClient.post<Usuario>(this.apiURL, JSON.stringify(usuario), this.httpOptions)
    .pipe(
      catchError(this.errorHandler)
    )
  }
 
- find(id: number): Observable<Persona> {
-   return this.httpClient.get<Persona>(this.apiURL + id)
+ find(id:number): Observable<Usuario> {
+   return this.httpClient.get<Usuario>(this.apiURL + id)
    .pipe(
      catchError(this.errorHandler)
    )
  }
 
- update(id: number, persona: any): Observable<Persona> {
-   return this.httpClient.put<Persona>(this.apiURL + id, JSON.stringify(persona), this.httpOptions)
+ update(id:number, usuario:Usuario): Observable<Usuario> {
+   return this.httpClient.put<Usuario>(this.apiURL + id, JSON.stringify(usuario), this.httpOptions)
    .pipe(
      catchError(this.errorHandler)
    )
  }
 
- delete(id: number){
-   return this.httpClient.delete<Persona>(this.apiURL + id, this.httpOptions)
+ delete(id:number){
+   return this.httpClient.delete<Usuario>(this.apiURL + id, this.httpOptions)
    .pipe(
      catchError(this.errorHandler)
    )
