@@ -8,22 +8,28 @@ import { EditComponent } from './Persona/edit/edit.component';
 import { AddComponent } from './Persona/add/add.component';
 import { HttpClientModule } from '@angular/common/http';
 import{FormsModule}from '@angular/forms'
-import { ServiceService } from '../app/Service/service.service';
+
+import { PersonaService } from './Persona/persona.service';
+import { PersonaModule } from './Persona/persona.module';
+import { VerComponent } from './Persona/ver/ver.component';
+
+//import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListarComponent,
-    EditComponent,
-    AddComponent
+  
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule
+    PersonaModule,
+    HttpClientModule,
+    //NgbModule
   ],
-  providers: [ServiceService],
+  providers: [PersonaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

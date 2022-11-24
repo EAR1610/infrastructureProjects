@@ -3,12 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { AddComponent } from './Persona/add/add.component';
 import { EditComponent } from './Persona/edit/edit.component';
 import { ListarComponent } from './Persona/listar/listar.component';
+import { VerComponent } from './Persona/ver/ver.component';
+import { PersonaModule } from './Persona/persona.module';
 
 const routes: Routes = [
-  {path:'listar',component:ListarComponent},
-  {path:'add',component:AddComponent},
-  {path:'edit',component:EditComponent},
+  { path: '', redirectTo: '/', pathMatch: 'full' },
+  {path:'personas',component:ListarComponent},  
+  {path:'personas/add',component:AddComponent},
+  {path:'personas/edit/:id',component:EditComponent},
+  {path:'personas/ver/:id',component:VerComponent},
 ];
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

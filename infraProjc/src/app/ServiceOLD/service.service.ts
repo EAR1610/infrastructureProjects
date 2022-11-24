@@ -12,7 +12,7 @@ import { Http2SecureServer } from 'http2';
 export class ServiceService {
   
   constructor(private http:HttpClient) { }
-  Url='http://localhost:8080/BkInfraProjc/personas'
+  Url='http://infrastruct.b/personas'
   getPersonas(){
     return this.http.get<Persona[]>(this.Url);
   }

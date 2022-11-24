@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+
+//import { PersonaService } from 'src/app/Services/persona.service';
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+import { PersonaService } from '../persona.service';
+//MODELOS propios
+
 import { Persona } from 'src/app/Modelo/persona';
-import { ServiceService } from '../../Service/service.service';
 
 @Component({
   selector: 'app-listar',
@@ -9,13 +16,16 @@ import { ServiceService } from '../../Service/service.service';
   styleUrls: ['./listar.component.css']
 })
 export class ListarComponent implements OnInit {
-  personas:Persona[] | undefined;
-  service: any;
-  constructor(private http:ServiceService, private router:Router){}
+  
+  public personas:Persona[] =[];
+  constructor(private service:PersonaService){}
+  
   ngOnInit(): void {
-      this.service.getPersonas()
-      .subscribe((data: Persona[] | undefined)=>{
+    //   this.personas= this.service.getAll();
+      this.service.getAll().subscribe((data: Persona[])=>{
         this.personas=data;
-      })
+        console.log(this.personas);
+        }
+    )
   }
 }

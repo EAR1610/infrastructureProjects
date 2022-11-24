@@ -11,9 +11,9 @@ export class AppComponent {
   title = 'infraProjc';
   constructor(private router:Router){}
   listar(){
-    this.router.navigate(["listar"])
+    this.router.navigate(["personas"])
   }
   add(){
-    this.router.navigate(["add"])
+    this.router.navigate(["personas/add"])
   }
 }
