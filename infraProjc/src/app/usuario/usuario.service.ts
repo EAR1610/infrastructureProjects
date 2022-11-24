@@ -41,6 +41,7 @@ export class UsuarioService {
  }
 
  find(id:number): Observable<Usuario> {
+  console.log("error aqui")
    return this.httpClient.get<Usuario>(this.apiURL + id)
    .pipe(
      catchError(this.errorHandler)

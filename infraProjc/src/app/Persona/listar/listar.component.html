@@ -5,7 +5,7 @@
         <div class="card-header">
             <h3>personas</h3>
 
-            <a href="personas/add" class="btn btn-primary ">Nuevo</a>            
+            <a routerLink="../personas/add" class="btn btn-primary ">Nuevo</a>            
         </div>
         <div class="card-body">
             <table class="table">
@@ -23,8 +23,8 @@
                         <td>{{persona.nombre}}</td>
                         <td>{{persona.apellido}}</td>
                         <td>
-                            <a class="btn btn-info" href="personas/ver/{{persona.id}}">ver</a>
-                            <a class="btn btn-warning" href="personas/edit/{{persona.id}}">Editar</a>
+                            <a class="btn btn-info" routerLink="../personas/ver/{{persona.id}}">ver</a>
+                            <a class="btn btn-warning" routerLink="../personas/edit/{{persona.id}}">Editar</a>
                             <button class="btn btn-danger">Delete</button>
                         </td>
                     </tr>
