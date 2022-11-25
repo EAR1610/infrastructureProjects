@@ -1,4 +1,28 @@
-<p>ver works!</p>
-{{persona.id}}
-{{persona.nombre}}
-{{persona.apellido}}
+<div class="container">
+    <p>ver works!</p>
+    
+    <div class="card w-75">
+        <div class="card-body">
+          <h5 class="card-title">Persona No.{{persona.id}}</h5>
+            <div class="card-text">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <fa-icon [icon]="['fas','user']"></fa-icon>
+                        {{persona.nombre}} {{persona.apellido}}  </li>
+                    <li class="list-group-item"> 
+                        <fa-icon [icon]="['fas','phone']"></fa-icon>
+                        5555 5555
+                    </li>
+                    <li class="list-group-item">A third item</li>
+                    <li class="list-group-item">A fourth item</li>
+                    <li class="list-group-item">And a fifth one</li>
+                </ul>
+                
+
+            </div>
+            <a (click)='action()' class="btn btn-primary">Back</a>
+            <a routerLink="../../" class="btn btn-primary ">Nuevo</a>            
+
+        </div>
+    </div>
+</div>

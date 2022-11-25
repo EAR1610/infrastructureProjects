@@ -11,7 +11,7 @@ import { Usuario } from './usuario';
 })
 export class UsuarioService {
 
-  private apiURL = "http://infraestruct.b:8080/usuario/";
+  private apiURL = "http://25.58.241.204:8080/usuario/";
 
 //  private apiURL = "http://bkinfraproj2.test/api/personas/";
 

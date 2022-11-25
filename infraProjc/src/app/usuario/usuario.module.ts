@@ -8,6 +8,8 @@ import { EditComponent } from './edit/edit.component';
 import { ReadComponent } from './read/read.component';
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DataTablesModule } from 'angular-datatables';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     UsuarioRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    DataTablesModule,
+    FontAwesomeModule
   ]
 })
 export class UsuarioModule { }

@@ -13,7 +13,7 @@ export class PersonaService {
 // private apiURL = "http://infraestruct.b:8080/usuario/";
 
 //  private apiURL = "http://bkinfraproj2.test/api/personas/";
-  private apiURL = "http://192.168.31.190/bkinfraproj2/public/api/personas/";
+  private apiURL = "http://25.78.207.146/bkinfraproj2/public/api/personas/";
   //URL sin diagonal
 private apiURLsd=this.apiURL.substr(0, this.apiURL.length - 1);
   

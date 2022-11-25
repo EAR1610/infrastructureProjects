@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" routerLink="/">Navbar</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -32,11 +32,16 @@
     <div class="p-1 mb-4 bg-light rounded-3">
         <div class="container">
             
+            <fa-icon [icon]="faGoogle"></fa-icon>
             hola mundo
             <button (click)="listar()" class="btn btn-primary">personas</button>
             <a routerLink="../usuarios/" class="btn btn-primary">usuarios</a>
+            <a routerLink="../personas/" class="btn btn-primary">personas</a>
+
             
     </div>
+
+
         
         <!-- SALIDA DE COMPONENTES -->
         <router-outlet></router-outlet>

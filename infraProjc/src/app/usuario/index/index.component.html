@@ -1,12 +1,17 @@
 
 <div class="container">
     <p>listar works!</p>
+    
+                       
+    <a routerLink="../usuarios/create" class="btn btn-primary ">
+        <fa-icon [icon]="['fas','plus']"></fa-icon>
+        Nuevo</a>            
     <div class="card">
         <div class="card-header">
             <h3>usuarios</h3>
         </div>
         <div class="card-body">
-            <table class="table">
+            <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table  table-condensed table-hover table-sm" >
                 <thead>
                     <tr class="text-center">
                         <th>ID</th>
@@ -23,8 +28,8 @@
                         <td>
                             <a class="btn btn-info" routerLink="../usuarios/read/{{usuario.id}}" >ver</a>
                             <button class="btn btn-warning">Editar</button>
-
-                            <button class="btn btn-danger">Delete</button>
+                            <button type="button" (click)="deleteUsuario(usuario.id)" class="btn btn-danger">Delete</button>
+                            
                         </td>
                     </tr>
                 </tbody>

@@ -1,17 +1,5 @@
-aaaa
-<!-- JQuery DataTable Css -->
-   <link href="//cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet">
 
-   
-   <style>
-       .fixed-Top-Rigth {
-           position: fixed;
-           right: 60px;
-           top: 80px;
-           z-index: 1;
-       }
 
-   </style>
 
 <div class="container">
     <p>listar works!</p>
@@ -23,7 +11,7 @@ aaaa
         </div>
         <div class="card-body">
             <div class="table-responsive">
-                <table datatable class="table table-striped table-bordered table-condensed " id="tabla">
+                <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table  table-condensed table-hover table-sm" >
                     <thead>
                         <tr class="text-center">
                             <th>ID</th>
@@ -38,9 +26,9 @@ aaaa
                             <td>{{persona.nombre}}</td>
                             <td>{{persona.apellido}}</td>
                             <td>
-                                <a class="btn btn-info" routerLink="../personas/ver/{{persona.id}}">ver</a>
-                                <a class="btn btn-warning" routerLink="../personas/edit/{{persona.id}}">Editar</a>
-                                <button class="btn btn-danger">Delete</button>
+                                <a class="btn btn-info btn-sm" routerLink="../personas/ver/{{persona.id}}">ver</a>
+                                <a class="btn btn-warning btn-sm" routerLink="../personas/edit/{{persona.id}}">Editar</a>
+                                <button class="btn btn-danger btn-sm">Delete</button>
                             </td>
                         </tr>
                     </tbody>
@@ -49,51 +37,3 @@ aaaa
         </div>
     </div>
 </div>
-
-<script src="//cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js">
-</script>
-aa
-<script>
- $(document).ready(function() {
-     console.log("readyDATATABLE!");
-     $('#tabla').DataTable({
-         language: {
-             "lengthMenu": "Mostrar _MENU_ registros",
-             "zeroRecords": "No se encontraron resultados",
-             "info": "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-             "infoEmpty": "Mostrando registros del 0 al 0 de un total de 0 registros",
-             "infoFiltered": "(filtrado de un total de _MAX_ registros)",
-             "sSearch": "Buscar:",
-             "oPaginate": {
-                 "sFirst": "Primero",
-                 "sLast": "Último",
-                 "sNext": "Siguiente",
-                 "sPrevious": "Anterior"
-             },
-             "sProcessing": "Procesando...",
-         },
-         //para usar los botones   
-         responsive: "true",
-         dom: 'Bfrtilp',
-         buttons: [{
-                 extend: 'excelHtml5',
-                 text: '<i class="fas fa-file-excel"></i> ',
-                 titleAttr: 'Exportar a Excel',
-                 className: 'btn btn-success'
-             },
-             {
-                 extend: 'pdfHtml5',
-                 text: '<i class="fas fa-file-pdf"></i> ',
-                 titleAttr: 'Exportar a PDF',
-                 className: 'btn btn-danger'
-             },
-             {
-                 extend: 'print',
-                 text: '<i class="fa fa-print"></i> ',
-                 titleAttr: 'Imprimir',
-                 className: 'btn btn-info'
-             },
-         ]
-     });
- });
-</script>
