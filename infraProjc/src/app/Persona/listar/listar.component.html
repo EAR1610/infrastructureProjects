@@ -7,8 +7,11 @@
         <div class="card-header">
             <h3>personas</h3>
 
-            <a routerLink="../personas/add" class="btn btn-primary ">Nuevo</a>            
+            <a routerLink="../personas/add" class="btn btn-primary ">
+                <fa-icon [icon]="['fas','plus']"></fa-icon>
+                Nuevo</a>            
         </div>
+        
         <div class="card-body">
             <div class="table-responsive">
                 <table datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="table  table-condensed table-hover table-sm" >
@@ -26,9 +29,15 @@
                             <td>{{persona.nombre}}</td>
                             <td>{{persona.apellido}}</td>
                             <td>
-                                <a class="btn btn-info btn-sm" routerLink="../personas/ver/{{persona.id}}">ver</a>
-                                <a class="btn btn-warning btn-sm" routerLink="../personas/edit/{{persona.id}}">Editar</a>
-                                <button class="btn btn-danger btn-sm">Delete</button>
+                                <a title="Ver" class="btn btn-info btn-sm text-white" routerLink="../personas/ver/{{persona.id}}">
+                                    <fa-icon [icon]="['fas','eye']"></fa-icon>
+                                </a>
+                                <a title="Editar" class="btn btn-warning btn-sm text-white" routerLink="../personas/edit/{{persona.id}}">
+                                    <fa-icon [icon]="['fas','pencil']"></fa-icon>
+                                </a>
+                                <button title="Eliminar"  class="btn btn-danger btn-sm">
+                                    <fa-icon [icon]="['fas','trash']"></fa-icon>
+                                </button>
                             </td>
                         </tr>
                     </tbody>
