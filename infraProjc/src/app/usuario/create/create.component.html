@@ -1,1 +1,77 @@
-<p>create works!</p>
+<div class="container">
+    <p>create works!</p>
+
+    
+  <div class="d-flex justify-content-between">
+    <h4>Form customer</h4>
+    <a href="#" routerLink="/personas/index" class="btn btn-primaryt">Back</a>
+  </div>
+
+  <hr/>
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Nombre:</label>
+              <input
+                formControlName="nombre"
+                id="nombre"
+                type="text"
+                class="form-control">
+                
+                <div *ngIf="f.nombre.touched && f.nombre.invalid" class="alert alert-danger">
+                  <div *ngIf="f.nombre?.errors?.required">*nombre es necesario.</div>
+                  <div *ngIf="f.nombre?.errors?.pattern">*el nombre solo pude contener letras.</div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">Usuario:</label>
+              <input
+                formControlName="usuario"
+                id="usuario"
+                type="text"
+                class="form-control">
+                
+                <div *ngIf="f.usuario.touched && f.usuario.invalid" class="alert alert-danger">
+                  <div *ngIf="f.usuario?.errors?.required">*usuario es necesario.</div>
+                  <div *ngIf="f.usuario?.errors?.pattern">*el usuario solo pude contener letras.</div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="title">passwords:</label>
+              <input
+                formControlName="password"
+                id="password"
+                type="text"
+                class="form-control">
+                
+                <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                  <div *ngIf="f.password?.errors?.required">*password es necesario.</div>
+                  <div *ngIf="f.password?.errors?.pattern">*el password solo pude contener letras.</div>
+              </div>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-md-6 ">
+              <label for="email">Email:</label>
+              <input
+                formControlName="correo"
+                id="correo"
+                type="text"
+                class="form-control">
+              <div *ngIf="f.correo.touched && f.correo.invalid" class="alert alert-danger">
+                  <div *ngIf="f.correo?.errors?.required">*correo is required.</div>
+                  <div *ngIf="f.correo?.errors?.email">*Direccion valida de CORREO.</div>
+              </div>
+            </div>
+        </div>
+
+
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>

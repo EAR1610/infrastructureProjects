@@ -11,9 +11,9 @@ import { Usuario } from './usuario';
 })
 export class UsuarioService {
 
-//  private apiURL = "http://infraestruct.b:8080/usuario/";
+  private apiURL = "http://infraestruct.b:8080/usuario/";
 
-  private apiURL = "http://bkinfraproj2.test/api/personas/";
+//  private apiURL = "http://bkinfraproj2.test/api/personas/";
 
 
   private apiURLsd=this.apiURL.substr(0, this.apiURL.length - 1);
@@ -41,7 +41,7 @@ export class UsuarioService {
  }
 
  find(id:number): Observable<Usuario> {
-  console.log("error aqui")
+  
    return this.httpClient.get<Usuario>(this.apiURL + id)
    .pipe(
      catchError(this.errorHandler)

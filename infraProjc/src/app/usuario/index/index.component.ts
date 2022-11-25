@@ -18,7 +18,7 @@ export class IndexComponent implements OnInit {
   ngOnInit(): void {
     this.service.getAll().subscribe((data: Usuario[])=>{
       this.usuarios = data;
-      console.log(this.usuarios);
+     // console.log(this.usuarios);// VER USUARIOS EN CONSOLA
     })
   }
 

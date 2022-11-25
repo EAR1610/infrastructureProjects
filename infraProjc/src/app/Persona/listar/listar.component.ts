@@ -24,7 +24,7 @@ export class ListarComponent implements OnInit {
     //   this.personas= this.service.getAll();
       this.service.getAll().subscribe((data: Persona[])=>{
         this.personas=data;
-        console.log(this.personas);
+       // console.log(this.personas);
         }
     )
   }

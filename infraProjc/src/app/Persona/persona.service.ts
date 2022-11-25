@@ -12,7 +12,8 @@ import { Persona } from '../Modelo/persona';
 export class PersonaService {
 // private apiURL = "http://infraestruct.b:8080/usuario/";
 
-  private apiURL = "http://bkinfraproj2.test/api/personas/";
+//  private apiURL = "http://bkinfraproj2.test/api/personas/";
+  private apiURL = "http://192.168.31.190/bkinfraproj2/public/api/personas/";
   //URL sin diagonal
 private apiURLsd=this.apiURL.substr(0, this.apiURL.length - 1);
   
@@ -27,14 +28,14 @@ private apiURLsd=this.apiURL.substr(0, this.apiURL.length - 1);
 
   getAll(): Observable<Persona[]> {
     
-   return this.httpClient.get<Persona[]>(this.apiURLsd)//elimina ultimo caracter
+   return this.httpClient.get<Persona[]>(this.apiURLsd)//URL SIN DIAGONAL
    .pipe(
      catchError(this.errorHandler)
    )
  }
 
- create(persona: any): Observable<Persona> {
-   return this.httpClient.post<Persona>(this.apiURL, JSON.stringify(persona), this.httpOptions)
+ create(persona: Persona): Observable<Persona> {
+   return this.httpClient.post<Persona>(this.apiURLsd, JSON.stringify(persona), this.httpOptions)//URL SIN DIAGONAL
    .pipe(
      catchError(this.errorHandler)
    )

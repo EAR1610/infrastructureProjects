@@ -29,8 +29,10 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true,
+    /*esto esta arriba */
     "strictPropertyInitialization": false,
     "noPropertyAccessFromIndexSignature": false,
+    /*esto esta arriba */
 
   }
 }

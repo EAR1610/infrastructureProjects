@@ -14,12 +14,23 @@ import { Persona } from 'src/app/Modelo/persona';
 export class VerComponent implements OnInit {
 
   id!: number;
-  persona!: Persona;
+  persona: Persona =new Persona();
+  /*
+  {
+    id: 0,
+    nombre: "undefined",
+    apellido: "undefined",
+    created_at: new Date,
+    updated_at: new Date
+  };
+  */
   form!: FormGroup;
 
   constructor(
     public personService: PersonaService,
     private route: ActivatedRoute,
+    
+
     
   ) { }
 

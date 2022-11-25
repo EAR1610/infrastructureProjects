@@ -33,16 +33,13 @@ export class AddComponent implements OnInit {
    // console.log(this.form.get('nombre')?.errors);
    // console.log(this.form.controls);
     return this.form.controls;
-    
-    
-
   }
 ​
   submit(){
     console.log(this.form.value);
     this.personService.create(this.form.value).subscribe(res => {
-         console.log('Person addd successfully!');
-         this.router.navigateByUrl('person/index');
+         console.log('Persona addd successfully!');
+         this.router.navigateByUrl('personas');
     })
   }
 ​

@@ -7,6 +7,42 @@
 <!-- * * * * * * * to get started with your project! * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<!-- 
+
+<VirtualHost *:80> 
+  DocumentRoot "C:/laragon/www/infra-projc"
+  ServerName infra-projc.test
+  
+  <Directory "C:/laragon/www/infra-projc">
+      RewriteEngine on
+  # Don't rewrite files or directories
+      RewriteCond %{REQUEST_FILENAME} -f [OR]
+      RewriteCond %{REQUEST_FILENAME} -d
+      RewriteRule ^ - [L]
+
+      # Rewrite everything else to index.html to allow HTML5 state links
+      RewriteRule ^ index.html [L]
+  </Directory>
+</VirtualHost>
+
+# If you want to use SSL, enable it by going to Menu > Apache > SSL > Enabled
+#RewriteEngine On
+#RewriteBase/
+#RewriteRule ^index\.html$ - [L]
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule index.html [L]
+ -->
+
+
+
+
+
+
+
+
+
+
 <style>
   :host {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";

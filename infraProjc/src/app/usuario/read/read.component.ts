@@ -10,9 +10,8 @@ import { Usuario } from '../usuario';
 })
 export class ReadComponent implements OnInit {
 
-  id!: number;
-  usuario!: Usuario;
-  
+  private id!: number;
+  usuario:  Usuario =new Usuario();
 
   constructor(
     public service: UsuarioService,
@@ -22,11 +21,10 @@ export class ReadComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.id = this.route.snapshot.params['id'];
-    console.log(this.route.snapshot.params);
+    this.id = this.route.snapshot.params['id'];    
     this.service.find(this.id).subscribe((data: Usuario)=>{
       this.usuario = data;
-      console.log( data.id);
+    //  console.log( data); //VER DATOS EN CONSOLA
     });
 
   }
