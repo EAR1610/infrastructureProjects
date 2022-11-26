@@ -31,11 +31,11 @@
 <div class="container py-4">
     <div class="p-1 mb-4 bg-light rounded-3">
         <div class="container">
-            
-            
+            <!-- ESTE TIPO DE ICONO STANDALONE -->
+          <fa-icon [icon]="['fas','users']"></fa-icon>
             
             <button (click)="listar()" class="btn btn-primary">
-              <fa-icon [icon]="['fas','users']"></fa-icon>
+              <i class="fa-solid fa-users"></i>
               personas
             </button>
             <a routerLink="../usuarios/" class="btn btn-primary">

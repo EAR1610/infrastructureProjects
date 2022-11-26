@@ -8,7 +8,7 @@
             <h3>personas</h3>
 
             <a routerLink="../personas/add" class="btn btn-primary ">
-                <fa-icon [icon]="['fas','plus']"></fa-icon>
+                <i class="fa-solid fa-plus"></i>
                 Nuevo</a>            
         </div>
         
@@ -30,13 +30,13 @@
                             <td>{{persona.apellido}}</td>
                             <td>
                                 <a title="Ver" class="btn btn-info btn-sm text-white" routerLink="../personas/ver/{{persona.id}}">
-                                    <fa-icon [icon]="['fas','eye']"></fa-icon>
+                                    <i class="fa-solid fa-eye"></i>
                                 </a>
                                 <a title="Editar" class="btn btn-warning btn-sm text-white" routerLink="../personas/edit/{{persona.id}}">
-                                    <fa-icon [icon]="['fas','pencil']"></fa-icon>
+                                    <i class="fa-solid fa-pencil"></i>
                                 </a>
                                 <button title="Eliminar"  class="btn btn-danger btn-sm">
-                                    <fa-icon [icon]="['fas','trash']"></fa-icon>
+                                    <i class="fa-solid fa-trash"></i>
                                 </button>
                             </td>
                         </tr>
