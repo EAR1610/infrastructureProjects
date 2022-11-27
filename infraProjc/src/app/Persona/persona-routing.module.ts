@@ -7,6 +7,7 @@ import { EditComponent } from './edit/edit.component';
 import { VerComponent } from './ver/ver.component';  
 
 const routes: Routes = [
+  
   { path: 'personas', redirectTo: 'personas/listar', pathMatch: 'full'},
   { path: 'personas', component: ListarComponent },
   { path: 'personas/add', component: AddComponent },

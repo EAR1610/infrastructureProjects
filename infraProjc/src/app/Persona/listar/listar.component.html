@@ -10,6 +10,9 @@
             <a routerLink="../personas/add" class="btn btn-primary ">
                 <i class="fa-solid fa-plus"></i>
                 Nuevo</a>            
+                <a routerLink="../personas/add" class="btn btn-primary ">
+                    <i class="fa-solid fa-plus"></i>
+                    busqueda avanzada</a>       
         </div>
         
         <div class="card-body">
@@ -25,7 +28,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let persona of personas" class="text-center">
-                            <td>{{persona.id}}</td>
+                            <td>PR00{{persona.id}}</td>
                             <td>{{persona.nombre}}</td>
                             <td>{{persona.apellido}}</td>
                             <td>

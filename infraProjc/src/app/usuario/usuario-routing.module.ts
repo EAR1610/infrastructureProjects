@@ -7,7 +7,7 @@ import { EditComponent } from './edit/edit.component';
 import { ReadComponent } from './read/read.component';  
 
 const routes: Routes = [
-  { path: 'usuarios', redirectTo: 'usuarios/index', pathMatch: 'full'},
+  { path: 'usuarios', redirectTo: 'usuarios', pathMatch: 'full'},
   { path: 'usuarios', component: IndexComponent },
   { path: 'usuarios/create', component: CreateComponent },
   { path: 'usuarios/edit/:id', component: EditComponent },

@@ -1,0 +1,70 @@
+
+<div class="container ">
+        <p>login works!</p>
+    <div class="row  justify-content-md-center">
+        <div class="col-md-6">
+            <div class="card  ">
+                <div class="card-body">
+                    
+                    <div class="d-flex justify-content-between">
+                        <h4>Inicio de Sesion</h4>
+                        <a routerLink="../" class="btn btn-primary">Back</a>
+                      </div>
+                    <div class="card-text  ">
+                        
+            
+                        <form [formGroup]="form" (ngSubmit)="submit()">
+
+            
+                            <div class="form-group row justify-content-md-center">
+                                <div class="col-md-6 ">
+                                <label for="title">
+                                    <i class="fa-solid fa-user"></i>
+                                    Usuario:</label>
+                                <input
+                                    formControlName="usuario"
+                                    id="usuario"
+                                    type="text"
+                                    class="form-control">
+                                    
+                                    <div *ngIf="f.usuario.touched && f.usuario.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.usuario?.errors?.required">*usuario es necesario.</div>
+                                    <div *ngIf="f.usuario?.errors?.pattern">*el usuario solo pude contener letras.</div>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="form-group row justify-content-md-center">
+                                <div class="col-md-6 ">
+                                <label for="title">
+                                    
+                              <fa-icon [icon]="['fas','lock']"></fa-icon>
+
+                                    passwords:</label>
+                                <input
+                                    formControlName="password"
+                                    id="password"
+                                    type="text"
+                                    class="form-control">
+                                    
+                                    <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">
+                                    <div *ngIf="f.password?.errors?.required">*password es necesario.</div>
+                                    <div *ngIf="f.password?.errors?.pattern">*el password solo pude contener letras.</div>
+                                </div>
+                                </div>
+                            </div>
+                        
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary btn-big" type="submit" [disabled]="!form.valid">Login</button>
+                            </div>
+
+                        </form>
+                    
+        
+                    </div>
+        
+                </div>
+            </div>
+            
+        </div>  
+    </div>
+</div> 
