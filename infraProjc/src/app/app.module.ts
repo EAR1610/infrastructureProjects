@@ -19,7 +19,7 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 import { HttpInterceptorService } from './auth/http-interceptor.service';
 import { AuthModule } from './auth/auth.module';
 
-
+import{NgbModule} from '@ng-bootstrap/ng-bootstrap';
 //import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
@@ -37,7 +37,7 @@ import { AuthModule } from './auth/auth.module';
     AuthModule,
     DataTablesModule,
     FontAwesomeModule,
-    //NgbModule
+    NgbModule
   ],
   providers: [
     {
